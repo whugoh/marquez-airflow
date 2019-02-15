@@ -16,7 +16,7 @@ class JobIdMapping:
     @provide_session
     def pop(self, key, session=None):
         q = session.query(airflow.models.Variable).filter(airflow.models.Variable.key == key)
-        if q.first() is None:
+        if not q.first():
             return
         else:
             val = q.first().val

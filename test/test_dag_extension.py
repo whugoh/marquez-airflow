@@ -1,12 +1,14 @@
-from marquez.airflow import MarquezDag
-from unittest.mock import Mock, patch, create_autospec
 from datetime import datetime
-from airflow.utils.state import State
-import airflow.models
+from unittest.mock import Mock, create_autospec, patch
+
 import pytest
-from croniter import croniter
-import pendulum
+
+import airflow.models
 import marquez.utils
+import pendulum
+from airflow.utils.state import State
+from croniter import croniter
+from marquez.airflow import MarquezDag
 from marquez_client.marquez import MarquezClient
 
 
